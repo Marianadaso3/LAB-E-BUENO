@@ -1,0 +1,80 @@
+digraph {
+	I0 [label="W' :  • p ;
+p :  • t ;
+t :  • m q ;
+t :  • m ;
+m :  • a ;
+a :  • ID ASSIGNOP e ;
+"]
+	I1 [label="W' : •;
+"]
+	I2 [label="p : • • ;
+"]
+	I3 [label="t : m • q ;
+q :  • SEMICOLON m q ;
+q :  • SEMICOLON m ;
+t : • • ;
+"]
+	I4 [label="m : • • ;
+"]
+	I5 [label="a : ID • ASSIGNOP e ;
+"]
+	I6 [label="t : • • ;
+"]
+	I7 [label="q : SEMICOLON • m q ;
+m :  • a ;
+a :  • ID ASSIGNOP e ;
+q : SEMICOLON • m ;
+"]
+	I8 [label="a : ID ASSIGNOP • e ;
+e :  • x z ;
+e :  • x ;
+"]
+	I9 [label="q : SEMICOLON m • q ;
+q :  • SEMICOLON m q ;
+q :  • SEMICOLON m ;
+q : • • ;
+"]
+	I10 [label="a : • • ;
+"]
+	I11 [label="e : x • z ;
+z :  • LT x ;
+z :  • EQ x x ;
+e : • • ;
+"]
+	I12 [label="q : • • ;
+"]
+	I13 [label="e : • • ;
+"]
+	I14 [label="z : LT • x ;
+"]
+	I15 [label="z : EQ • x x ;
+"]
+	I16 [label="z : • • ;
+"]
+	I17 [label="z : EQ x • x ;
+"]
+	I18 [label="z : • • ;
+"]
+	I0 -> I1 [label=p]
+	I0 -> I2 [label=t]
+	I0 -> I3 [label=m]
+	I0 -> I4 [label=a]
+	I0 -> I5 [label=ID]
+	I3 -> I6 [label=q]
+	I3 -> I7 [label=SEMICOLON]
+	I5 -> I8 [label=ASSIGNOP]
+	I7 -> I9 [label=m]
+	I7 -> I4 [label=a]
+	I7 -> I5 [label=ID]
+	I8 -> I10 [label=e]
+	I8 -> I11 [label=x]
+	I9 -> I12 [label=q]
+	I9 -> I7 [label=SEMICOLON]
+	I11 -> I13 [label=z]
+	I11 -> I14 [label=LT]
+	I11 -> I15 [label=EQ]
+	I14 -> I16 [label=x]
+	I15 -> I17 [label=x]
+	I17 -> I18 [label=x]
+}
